@@ -1,0 +1,69 @@
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+
+<div>
+
+	<h2>Alunos</h2>
+	
+	<div>
+	<label for="id">ID</label>
+		<input type="text" ng-model="aluno.id" readonly="readonly" class="form-control" id="id" placeholder="Id">
+	<label for="id">Nome</label>
+		<input type="text" ng-model="aluno.nome" class="form-control" id="nome" placeholder="Nome">
+	<label for="id">Curso</label>	
+		<select  ng-model="aluno.curso.id" class="form-control" id="curso">
+    		<option value={{curso.id}} ng-repeat="curso in cursos" >{{curso.nome}}</option>
+  		</select>	
+	<label for="id">Matrícula</label>
+		<input type="text" ng-model="aluno.matricula" class="form-control" id="matricula" placeholder="Matrícula">
+	<label for="id">Status</label>	
+		<select ng-model="aluno.status" class="form-control" id="status">
+   			 <option>Matriculado</option>
+   			 <option>Trancado</option>
+   			 <option>Jubilado</option>
+  		</select>
+		
+	<label for="id">Semeste</label>
+		<input type="text" ng-model="aluno.semestre" class="form-control" id="semestre" placeholder="Semestre">
+	</div>
+	
+	<br/>
+	
+	<div>
+	
+	<button class="btn btn-primary"	ng-click="salvar();">Salvar</button>
+	
+	</div>
+	
+	<br/>
+	
+	<div class="table-responsive">
+		<table class="table table-striped table-hover table-bordered table-condensed">
+			<tr>
+				<th style="cursor: pointer">Id</th>
+				<th style="cursor: pointer">Nome</th>
+				<th style="cursor: pointer">Curso</th>
+				<th style="cursor: pointer">Matrícula</th>
+				<th style="cursor: pointer">Status</th>
+				<th style="cursor: pointer">Semestre</th>
+				<th>Editar</th>
+				<th>Deletar</th>
+			</tr>
+			
+			<tr ng-repeat="aluno in alunos">
+				<td>{{aluno.id}}</td>
+				<td>{{aluno.nome}}</td>	
+				<td>{{aluno.curso.nome}}</td>	
+				<td>{{aluno.matricula}}</td>
+				<td>{{aluno.status}}</td>
+				<td>{{aluno.semestre}}</td>
+				<td><button class="glyphicon glyphicon-pencil" ng-click="editar(aluno);"></button></td>		
+				<td><button class="	glyphicon glyphicon-remove" ng-click="deletar(aluno);"></button></td>	
+			
+			</tr>
+			
+		</table>
+	</div>
+	
+	
+
+</div>

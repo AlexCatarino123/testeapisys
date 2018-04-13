@@ -1,0 +1,54 @@
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+
+<div>
+
+	<h2>Cursos</h2>
+	
+	<div>
+	<label for="id">ID</label>
+		<input type="text" ng-model="curso.id" readonly="readonly" class="form-control" id="id" placeholder="Id">
+	<label for="id">Codigo</label>
+		<input type="text" ng-model="curso.codigo" class="form-control" id="codigo" placeholder="Codigo">
+	<label for="id">Nome</label>
+		<input type="text" ng-model="curso.nome" class="form-control" id="nome" placeholder="Nome">
+	<label for="id">Instituição</label>
+		<input type="text" ng-model="curso.instituicao" class="form-control" id="instituicao" placeholder="Instituição">
+	</div>
+	
+	<br/>
+	
+	<div>
+	
+	<button class="btn btn-primary"	ng-click="salvar();">Salvar</button>
+	
+	</div>
+	
+	<br/>
+	
+	<div class="table-responsive">
+		<table class="table table-striped table-hover table-bordered table-condensed">
+			<tr>
+				<th style="cursor: pointer">Id</th>
+				<th style="cursor: pointer">Codigo</th>
+				<th style="cursor: pointer">Nome</th>
+				<th style="cursor: pointer">Instituição</th>
+				<th>Editar</th>
+				<th>Deletar</th>
+			</tr>
+			
+			<tr ng-repeat="curso in cursos">
+				<td>{{curso.id}}</td>
+				<td>{{curso.codigo}}</td>	
+				<td>{{curso.nome}}</td>	
+				<td>{{curso.instituicao}}</td>
+				<td><button class="glyphicon glyphicon-pencil" ng-click="editar(curso);"></button></td>		
+				<td><button class="	glyphicon glyphicon-remove" ng-click="deletar(curso);"></button></td>	
+			
+			</tr>
+			
+		</table>
+	</div>
+	
+	
+
+</div>
